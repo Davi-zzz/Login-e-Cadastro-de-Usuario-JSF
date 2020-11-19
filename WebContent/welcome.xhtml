@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
+	
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<h:head>
+	<link href="resources\css\login.css" rel="stylesheet" type="text/css" />
+</h:head>
+<h:body>
+	<div class="box">
+		<h:form rendered="#{welcomeController.usuarioLogado != null}"> 
+			<h:outputLabel style="color: white" value="Seja Bem vindo! #{welcomeController.usuarioLogado.nome}"/>
+			
+			 <br> <h:commandButton value="Sair" 
+				action="#{welcomeController.encerrarSessao}"
+				style="color:white"/> </br>
+				
+		</h:form>
+	</div>
+</h:body>
+</html>

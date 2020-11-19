@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
+	
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<h:head>
+	<link href="resources\css\login.css" rel="stylesheet" type="text/css" />
+</h:head>
+	
+	<h:body>
+	<h:messages style="color: red"  />
+	<div class="box">
+	<h:form>
+		  <h1>Login</h1>
+		 <h:inputText id="itEmail" 
+		 value="#{loginController.user.email}" 
+		  pt:placeholder="E-mail">
+		</h:inputText>	
+		<h:message for="itEmail" style="color:red"/>
+		  <h:inputText id="itSenha" value="#{loginController.user.senha}"
+			 pt:placeholder="Senha"
+			required="true"
+			requiredMessage="O nome deve ser informado." 
+			validatorMessage="Informe um valor entre 2 e 60" >
+		 <f:validateLength minimum="2" maximum="60" />
+		 <h:message for="itSenha" style="color:red"/>
+		 </h:inputText>
+		
+		<h:commandButton value="Logar"
+		styleClass="btn btn-lg btn-block btn-login"
+		action="#{loginController.logar()}" />
+		
+		
+	  
+	</h:form>
+	<h:form><h:commandLink actionListener="#{loginController.redirectButton()}" value="Não tem uma Conta?"/></h:form>
+	
+	 </div>
+	 </h:body>
+
+</html>
+
